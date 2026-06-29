@@ -10,7 +10,7 @@ It controls which traffic is allowed to enter (Inbound Rules) and leave (Outboun
 
 Types of Security Group Rules
 
-1. Inbound Rules
+1. Inbound Rules:
 Inbound rules control incoming traffic to the EC2 instance.
 
 Example:
@@ -18,7 +18,7 @@ SSH (22) → Remote login
 HTTP (80) → Website access
 HTTPS (443) → Secure website access
 
-2. Outbound Rules
+2. Outbound Rules:
 Outbound rules control traffic leaving the EC2 instance.
 By default, AWS allows all outbound traffic.
 
