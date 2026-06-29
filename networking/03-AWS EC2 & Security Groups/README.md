@@ -38,13 +38,15 @@ Security Group for Web Server
 ---
 
 Configure Inbound Rules
-Type	Protocol	Port	Source	Purpose
-SSH	TCP	22	My IP	Remote Login
-HTTP	TCP	80	Anywhere (0.0.0.0/0)	Website Access
-HTTPS	TCP	443	Anywhere (0.0.0.0/0)	Secure Website
+| **Type** | **Protocol** | **Port** | **Source**           | **Purpose**                                      |
+| -------- | ------------ | -------- | -------------------- | ------------------------------------------------ |
+| SSH      | TCP          | 22       | My IP                | Allows secure remote login to the EC2 instance.  |
+| HTTP     | TCP          | 80       | Anywhere (0.0.0.0/0) | Allows users to access the website over HTTP.    |
+| HTTPS    | TCP          | 443      | Anywhere (0.0.0.0/0) | Allows secure access to the website using HTTPS. |
 
 Configure Outbound Rules
 
 Default Rule:
-Type	Protocol	Port	Destination
-All Traffic	All	All	0.0.0.0/0
+| **Type**    | **Protocol** | **Port** | **Destination** | **Purpose**                                                                    |
+| ----------- | ------------ | -------- | --------------- | ------------------------------------------------------------------------------ |
+| All Traffic | All          | All      | 0.0.0.0/0       | Allows the EC2 instance to send traffic to any destination (default AWS rule). |
