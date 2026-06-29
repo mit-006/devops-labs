@@ -1,0 +1,59 @@
+# 🌐 Networking Fundamentals
+
+Introduction
+
+Networking is the process of connecting two or more devices so they can communicate and exchange data 
+using standard communication protocols over a wired or wireless network.
+
+---
+
+Objectives
+
+The primary objectives of this module are to:
+
+* Understand the fundamentals of computer networking.
+* Learn the OSI and TCP/IP networking models.
+* Explore commonly used networking protocols and their default port numbers.
+* Understand DNS and network communication.
+* Configure AWS EC2 Security Groups.
+* Practice essential networking commands used in Linux.
+* Develop basic network troubleshooting skills.
+
+---
+
+## Why Networking Matters in DevOps
+
+Networking is an essential skill for every DevOps engineer. 
+Cloud infrastructure, CI/CD pipelines, containers, virtual machines, APIs, and
+microservices all rely on network communication. 
+Understanding networking helps in configuring servers, securing cloud environments, diagnosing connectivity problems,
+and ensuring reliable application deployment.
+
+---
+
+## Learning Outcomes
+
+After completing this module, you will be able to:
+
+* Explain how data travels across a network.
+* Understand the responsibilities of each OSI and TCP/IP layer.
+* Identify common networking protocols and their uses.
+* Configure AWS Security Groups for secure communication.
+* Perform network diagnostics using Linux networking commands.
+* Troubleshoot basic networking issues.
+
+---
+
+## Topics Covered
+
+* OSI Model
+* TCP/IP Model
+* OSI vs TCP/IP Comparison
+* Network Protocols
+* Common Port Numbers
+* AWS EC2 Security Groups
+* Networking Commands
+* DNS Fundamentals
+* Network Troubleshooting
+* Interview Questions
+* Quick Reference Cheat Sheets
