@@ -1,0 +1,90 @@
+
+===== BEFORE CLEANUP =====
+NAME                  MAJ:MIN RM SIZE RO TYPE MOUNTPOINTS
+nvme3n1               259:0    0   6G  0 disk 
+└─devops_vg-devops_lv 253:0    0   7G  0 lvm  /mnt/devops_data
+nvme4n1               259:1    0   3G  0 disk /mnt/devops_extra
+nvme1n1               259:2    0   4G  0 disk 
+└─devops_vg-devops_lv 253:0    0   7G  0 lvm  /mnt/devops_data
+nvme2n1               259:3    0   5G  0 disk 
+nvme0n1               259:4    0  13G  0 disk 
+├─nvme0n1p1           259:5    0  13G  0 part /
+├─nvme0n1p127         259:6    0   1M  0 part 
+└─nvme0n1p128         259:7    0  10M  0 part /boot/efi
+
+Filesystem                       Size  Used Avail Use% Mounted on
+devtmpfs                         420M     0  420M   0% /dev
+tmpfs                            457M     0  457M   0% /dev/shm
+tmpfs                            183M  548K  183M   1% /run
+efivarfs                         128K  3.9K  120K   4% /sys/firmware/efi/efivars
+/dev/nvme0n1p1                    13G  3.7G  9.3G  29% /
+tmpfs                            457M     0  457M   0% /tmp
+/dev/nvme0n1p128                  10M  1.3M  8.7M  13% /boot/efi
+tmpfs                             92M     0   92M   0% /run/user/1000
+/dev/mapper/devops_vg-devops_lv  6.9G   24K  6.5G   1% /mnt/devops_data
+/dev/nvme4n1                     2.9G   24K  2.8G   1% /mnt/devops_extra
+
+proc on /proc type proc (rw,nosuid,nodev,noexec,relatime)
+sysfs on /sys type sysfs (rw,nosuid,nodev,noexec,relatime,seclabel)
+devtmpfs on /dev type devtmpfs (rw,nosuid,seclabel,size=429496k,nr_inodes=107374,mode=755)
+securityfs on /sys/kernel/security type securityfs (rw,nosuid,nodev,noexec,relatime)
+tmpfs on /dev/shm type tmpfs (rw,nosuid,nodev,seclabel)
+devpts on /dev/pts type devpts (rw,nosuid,noexec,relatime,seclabel,gid=5,mode=620,ptmxmode=000)
+tmpfs on /run type tmpfs (rw,nosuid,nodev,seclabel,size=186956k,nr_inodes=819200,mode=755)
+cgroup2 on /sys/fs/cgroup type cgroup2 (rw,nosuid,nodev,noexec,relatime,seclabel,nsdelegate,memory_recursiveprot)
+none on /sys/fs/pstore type pstore (rw,nosuid,nodev,noexec,relatime,seclabel)
+efivarfs on /sys/firmware/efi/efivars type efivarfs (rw,nosuid,nodev,noexec,relatime)
+bpf on /sys/fs/bpf type bpf (rw,nosuid,nodev,noexec,relatime,mode=700)
+/dev/nvme0n1p1 on / type xfs (rw,noatime,seclabel,inode64,logbufs=8,logbsize=32k,sunit=1024,swidth=1024,noquota)
+selinuxfs on /sys/fs/selinux type selinuxfs (rw,nosuid,noexec,relatime)
+systemd-1 on /proc/sys/fs/binfmt_misc type autofs (rw,relatime,fd=33,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=2064)
+mqueue on /dev/mqueue type mqueue (rw,nosuid,nodev,noexec,relatime,seclabel)
+tracefs on /sys/kernel/tracing type tracefs (rw,nosuid,nodev,noexec,relatime,seclabel)
+hugetlbfs on /dev/hugepages type hugetlbfs (rw,relatime,seclabel,pagesize=2M)
+debugfs on /sys/kernel/debug type debugfs (rw,nosuid,nodev,noexec,relatime,seclabel)
+tmpfs on /tmp type tmpfs (rw,nosuid,nodev,seclabel,nr_inodes=1048576)
+ramfs on /run/credentials/systemd-sysctl.service type ramfs (ro,nosuid,nodev,noexec,relatime,seclabel,mode=700)
+configfs on /sys/kernel/config type configfs (rw,nosuid,nodev,noexec,relatime)
+fusectl on /sys/fs/fuse/connections type fusectl (rw,nosuid,nodev,noexec,relatime)
+ramfs on /run/credentials/systemd-tmpfiles-setup-dev.service type ramfs (ro,nosuid,nodev,noexec,relatime,seclabel,mode=700)
+systemd-1 on /boot/efi type autofs (rw,relatime,fd=57,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=3278)
+ramfs on /run/credentials/systemd-tmpfiles-setup.service type ramfs (ro,nosuid,nodev,noexec,relatime,seclabel,mode=700)
+sunrpc on /var/lib/nfs/rpc_pipefs type rpc_pipefs (rw,relatime)
+/dev/nvme0n1p128 on /boot/efi type vfat (rw,noatime,fmask=0077,dmask=0077,codepage=437,iocharset=ascii,shortname=winnt,errors=remount-ro,x-systemd.automount)
+tmpfs on /run/user/1000 type tmpfs (rw,nosuid,nodev,relatime,seclabel,size=93476k,nr_inodes=23369,mode=700,uid=1000,gid=1000)
+/dev/mapper/devops_vg-devops_lv on /mnt/devops_data type ext4 (rw,relatime,seclabel)
+/dev/nvme4n1 on /mnt/devops_extra type ext4 (rw,relatime,seclabel)
+
+===== Unmounting Volumes =====
+
+===== Removing Logical Volume =====
+
+===== Removing Volume Group =====
+
+===== Removing Physical Volumes =====
+
+===== Removing Mount Directories =====
+
+===== Verification =====
+NAME          MAJ:MIN RM SIZE RO TYPE MOUNTPOINTS
+nvme3n1       259:0    0   6G  0 disk 
+nvme4n1       259:1    0   3G  0 disk 
+nvme1n1       259:2    0   4G  0 disk 
+nvme2n1       259:3    0   5G  0 disk 
+nvme0n1       259:4    0  13G  0 disk 
+├─nvme0n1p1   259:5    0  13G  0 part /
+├─nvme0n1p127 259:6    0   1M  0 part 
+└─nvme0n1p128 259:7    0  10M  0 part /boot/efi
+
+
+
+
+Filesystem        Size  Used Avail Use% Mounted on
+devtmpfs          420M     0  420M   0% /dev
+tmpfs             457M     0  457M   0% /dev/shm
+tmpfs             183M  544K  183M   1% /run
+efivarfs          128K  3.9K  120K   4% /sys/firmware/efi/efivars
+/dev/nvme0n1p1     13G  3.7G  9.3G  29% /
+tmpfs             457M     0  457M   0% /tmp
+/dev/nvme0n1p128   10M  1.3M  8.7M  13% /boot/efi
+tmpfs              92M     0   92M   0% /run/user/1000

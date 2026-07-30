@@ -1,0 +1,177 @@
+
+===== Initial lsblk =====
+NAME          MAJ:MIN RM SIZE RO TYPE MOUNTPOINTS
+nvme3n1       259:0    0   6G  0 disk 
+nvme4n1       259:1    0   3G  0 disk 
+nvme1n1       259:2    0   4G  0 disk 
+nvme2n1       259:3    0   5G  0 disk 
+nvme0n1       259:4    0  13G  0 disk 
+├─nvme0n1p1   259:5    0  13G  0 part /
+├─nvme0n1p127 259:6    0   1M  0 part 
+└─nvme0n1p128 259:7    0  10M  0 part /boot/efi
+
+===== Initial df -h =====
+Filesystem        Size  Used Avail Use% Mounted on
+devtmpfs          420M     0  420M   0% /dev
+tmpfs             457M     0  457M   0% /dev/shm
+tmpfs             183M  540K  183M   1% /run
+efivarfs          128K  3.9K  120K   4% /sys/firmware/efi/efivars
+/dev/nvme0n1p1     13G  3.7G  9.3G  29% /
+tmpfs             457M     0  457M   0% /tmp
+/dev/nvme0n1p128   10M  1.3M  8.7M  13% /boot/efi
+tmpfs              92M     0   92M   0% /run/user/1000
+
+===== Creating Physical Volumes =====
+
+===== Creating Volume Group =====
+
+===== Creating Logical Volume =====
+
+===== PV Display =====
+  --- Physical volume ---
+  PV Name               /dev/sdf
+  VG Name               devops_vg
+  PV Size               4.00 GiB / not usable 4.00 MiB
+  Allocatable           yes 
+  PE Size               4.00 MiB
+  Total PE              1023
+  Free PE               1023
+  Allocated PE          0
+  PV UUID               6FebsK-882a-RcWR-Kdb1-4H12-BLbN-gtG7AN
+   
+  --- Physical volume ---
+  PV Name               /dev/sdg
+  VG Name               devops_vg
+  PV Size               5.00 GiB / not usable 4.00 MiB
+  Allocatable           yes 
+  PE Size               4.00 MiB
+  Total PE              1279
+  Free PE               1279
+  Allocated PE          0
+  PV UUID               WLGYYs-8zrR-b0aj-1gN3-fkyM-DTH3-QOx0j1
+   
+  --- Physical volume ---
+  PV Name               /dev/sdh
+  VG Name               devops_vg
+  PV Size               6.00 GiB / not usable 4.00 MiB
+  Allocatable           yes 
+  PE Size               4.00 MiB
+  Total PE              1535
+  Free PE               255
+  Allocated PE          1280
+  PV UUID               FVahSw-rPRu-evaN-ans1-0upb-e7uO-GfYEqk
+   
+
+===== VG Display =====
+  --- Volume group ---
+  VG Name               devops_vg
+  System ID             
+  Format                lvm2
+  Metadata Areas        3
+  Metadata Sequence No  2
+  VG Access             read/write
+  VG Status             resizable
+  MAX LV                0
+  Cur LV                1
+  Open LV               0
+  Max PV                0
+  Cur PV                3
+  Act PV                3
+  VG Size               <14.99 GiB
+  PE Size               4.00 MiB
+  Total PE              3837
+  Alloc PE / Size       1280 / 5.00 GiB
+  Free  PE / Size       2557 / <9.99 GiB
+  VG UUID               HCVdWa-wq31-i7Rx-QR4w-BCXA-PfF3-KZfcAG
+   
+
+===== LV Display =====
+  --- Logical volume ---
+  LV Path                /dev/devops_vg/devops_lv
+  LV Name                devops_lv
+  VG Name                devops_vg
+  LV UUID                raEdpf-DU2o-LAQ0-im3K-8E25-KyJl-TvN4dF
+  LV Write Access        read/write
+  LV Creation host, time ip-172-31-32-75.ec2.internal, 2026-07-30 18:11:45 +0530
+  LV Status              available
+  # open                 0
+  LV Size                5.00 GiB
+  Current LE             1280
+  Segments               1
+  Allocation             inherit
+  Read ahead sectors     auto
+  - currently set to     256
+  Block device           253:0
+   
+
+===== Creating Filesystem on Logical Volume =====
+
+===== Creating Mount Point =====
+
+===== Mounting Logical Volume =====
+
+===== lsblk After LV Mount =====
+NAME                  MAJ:MIN RM SIZE RO TYPE MOUNTPOINTS
+nvme3n1               259:0    0   6G  0 disk 
+└─devops_vg-devops_lv 253:0    0   5G  0 lvm  /mnt/devops_data
+nvme4n1               259:1    0   3G  0 disk 
+nvme1n1               259:2    0   4G  0 disk 
+nvme2n1               259:3    0   5G  0 disk 
+nvme0n1               259:4    0  13G  0 disk 
+├─nvme0n1p1           259:5    0  13G  0 part /
+├─nvme0n1p127         259:6    0   1M  0 part 
+└─nvme0n1p128         259:7    0  10M  0 part /boot/efi
+
+===== Creating Filesystem on Fourth Disk =====
+
+===== Creating Extra Mount Point =====
+
+===== Mounting Fourth Disk =====
+
+===== lsblk After Fourth Disk Mount =====
+NAME                  MAJ:MIN RM SIZE RO TYPE MOUNTPOINTS
+nvme3n1               259:0    0   6G  0 disk 
+└─devops_vg-devops_lv 253:0    0   5G  0 lvm  /mnt/devops_data
+nvme4n1               259:1    0   3G  0 disk /mnt/devops_extra
+nvme1n1               259:2    0   4G  0 disk 
+nvme2n1               259:3    0   5G  0 disk 
+nvme0n1               259:4    0  13G  0 disk 
+├─nvme0n1p1           259:5    0  13G  0 part /
+├─nvme0n1p127         259:6    0   1M  0 part 
+└─nvme0n1p128         259:7    0  10M  0 part /boot/efi
+
+===== Extending Logical Volume by 2GB =====
+
+===== Resizing Filesystem =====
+
+===== Final LV Display =====
+  --- Logical volume ---
+  LV Path                /dev/devops_vg/devops_lv
+  LV Name                devops_lv
+  VG Name                devops_vg
+  LV UUID                raEdpf-DU2o-LAQ0-im3K-8E25-KyJl-TvN4dF
+  LV Write Access        read/write
+  LV Creation host, time ip-172-31-32-75.ec2.internal, 2026-07-30 18:11:45 +0530
+  LV Status              available
+  # open                 1
+  LV Size                7.00 GiB
+  Current LE             1792
+  Segments               2
+  Allocation             inherit
+  Read ahead sectors     auto
+  - currently set to     256
+  Block device           253:0
+   
+
+===== Final df -h =====
+Filesystem                       Size  Used Avail Use% Mounted on
+devtmpfs                         420M     0  420M   0% /dev
+tmpfs                            457M     0  457M   0% /dev/shm
+tmpfs                            183M  548K  183M   1% /run
+efivarfs                         128K  3.9K  120K   4% /sys/firmware/efi/efivars
+/dev/nvme0n1p1                    13G  3.7G  9.3G  29% /
+tmpfs                            457M     0  457M   0% /tmp
+/dev/nvme0n1p128                  10M  1.3M  8.7M  13% /boot/efi
+tmpfs                             92M     0   92M   0% /run/user/1000
+/dev/mapper/devops_vg-devops_lv  6.9G   24K  6.5G   1% /mnt/devops_data
+/dev/nvme4n1                     2.9G   24K  2.8G   1% /mnt/devops_extra
