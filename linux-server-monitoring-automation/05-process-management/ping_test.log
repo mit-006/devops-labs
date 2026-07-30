@@ -1,0 +1,7 @@
+PING google.com (142.251.111.138) 56(84) bytes of data.
+64 bytes from bk-in-f138.1e100.net (142.251.111.138): icmp_seq=1 ttl=106 time=1.93 ms
+64 bytes from bk-in-f138.1e100.net (142.251.111.138): icmp_seq=2 ttl=106 time=1.91 ms
+64 bytes from bk-in-f138.1e100.net (142.251.111.138): icmp_seq=3 ttl=106 time=1.99 ms
+64 bytes from bk-in-f138.1e100.net (142.251.111.138): icmp_seq=4 ttl=106 time=1.96 ms
+64 bytes from bk-in-f138.1e100.net (142.251.111.138): icmp_seq=5 ttl=106 time=1.98 ms
+64 bytes from bk-in-f138.1e100.net (142.251.111.138): icmp_seq=6 ttl=106 time=1.94 ms

@@ -1,0 +1,124 @@
+========== PROCESS MANAGEMENT ==========
+
+Starting Background Process...
+Background Process ID : 5931
+
+===== Using ps =====
+UID          PID    PPID  C STIME TTY          TIME CMD
+ec2-user    5931    5922  0 19:06 pts/2    00:00:00 ping google.com
+
+===== Running Processes =====
+ec2-user    5931  0.0  0.3 223196  2852 pts/2    S+   19:06   0:00 ping google.com
+ec2-user    5946  0.0  0.2 222344  2288 pts/2    S+   19:06   0:00 grep ping
+
+===== Process Tree =====
+systemd(1)-+-agetty(1993)
+           |-agetty(1995)
+           |-amazon-ssm-agen(1974)-+-{amazon-ssm-agen}(1990)
+           |                       |-{amazon-ssm-agen}(1991)
+           |                       |-{amazon-ssm-agen}(1992)
+           |                       |-{amazon-ssm-agen}(2007)
+           |                       |-{amazon-ssm-agen}(2009)
+           |                       |-{amazon-ssm-agen}(2015)
+           |                       |-{amazon-ssm-agen}(2025)
+           |                       `-{amazon-ssm-agen}(4865)
+           |-atd(1988)
+           |-auditd(1664)---{auditd}(1665)
+           |-chronyd(2017)
+           |-containerd(1842)-+-{containerd}(1849)
+           |                  |-{containerd}(1850)
+           |                  |-{containerd}(1851)
+           |                  |-{containerd}(1852)
+           |                  |-{containerd}(1853)
+           |                  |-{containerd}(1854)
+           |                  `-{containerd}(1861)
+           |-crond(1989)
+           |-dbus-broker-lau(1794)---dbus-broker(1795)
+           |-dockerd(1987)-+-{dockerd}(2011)
+           |               |-{dockerd}(2012)
+           |               |-{dockerd}(2013)
+           |               |-{dockerd}(2014)
+           |               |-{dockerd}(2024)
+           |               |-{dockerd}(2027)
+           |               |-{dockerd}(2028)
+           |               `-{dockerd}(2040)
+           |-gssproxy(1843)-+-{gssproxy}(1844)
+           |                |-{gssproxy}(1845)
+           |                |-{gssproxy}(1846)
+           |                |-{gssproxy}(1847)
+           |                `-{gssproxy}(1848)
+           |-irqbalance(1799)---{irqbalance}(1808)
+           |-lsmd(1800)
+           |-sshd(1980)-+-sshd(2598)---sshd(2615)---bash(2616)
+           |            |-sshd(2906)---sshd(2914)---bash(2958)
+           |            `-sshd(5839)---sshd(5849)---bash(5891)---process_managem(5922)-+-ping(5931)
+           |                                                                           |-pstree(5952)
+           |                                                                           `-tee(5953)
+           |-systemd(2606)---(sd-pam)(2608)
+           |-systemd-homed(1803)
+           |-systemd-inhibit(1796)---acpid(1832)
+           |-systemd-journal(1174)
+           |-systemd-logind(1804)
+           |-systemd-network(1806)
+           |-systemd-resolve(1660)
+           |-systemd-udevd(1633)
+           `-systemd-userdbd(2601)-+-systemd-userwor(5787)
+                                   |-systemd-userwor(5788)
+                                   `-systemd-userwor(5789)
+
+===== Memory Usage =====
+               total        used        free      shared  buff/cache   available
+Mem:           912Mi       214Mi       311Mi       0.0Ki       386Mi       564Mi
+Swap:             0B          0B          0B
+
+===== CPU Information =====
+Architecture:                            x86_64
+CPU op-mode(s):                          32-bit, 64-bit
+Address sizes:                           46 bits physical, 48 bits virtual
+Byte Order:                              Little Endian
+CPU(s):                                  2
+On-line CPU(s) list:                     0,1
+Vendor ID:                               GenuineIntel
+Model name:                              Intel(R) Xeon(R) Platinum 8259CL CPU @ 2.50GHz
+CPU family:                              6
+Model:                                   85
+Thread(s) per core:                      2
+Core(s) per socket:                      1
+Socket(s):                               1
+Stepping:                                7
+BogoMIPS:                                4999.99
+Flags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch cpuid_fault pti fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx avx512f avx512dq rdseed adx smap clflushopt clwb avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves ida arat pku ospke
+Hypervisor vendor:                       KVM
+Virtualization type:                     full
+L1d cache:                               32 KiB (1 instance)
+L1i cache:                               32 KiB (1 instance)
+L2 cache:                                1 MiB (1 instance)
+L3 cache:                                35.8 MiB (1 instance)
+NUMA node(s):                            1
+NUMA node0 CPU(s):                       0,1
+Vulnerability Gather data sampling:      Unknown: Dependent on hypervisor status
+Vulnerability Ghostwrite:                Not affected
+Vulnerability Indirect target selection: Mitigation; Aligned branch/return thunks
+Vulnerability Itlb multihit:             KVM: Mitigation: VMX unsupported
+Vulnerability L1tf:                      Mitigation; PTE Inversion
+Vulnerability Mds:                       Vulnerable: Clear CPU buffers attempted, no microcode; SMT Host state unknown
+Vulnerability Meltdown:                  Mitigation; PTI
+Vulnerability Mmio stale data:           Vulnerable: Clear CPU buffers attempted, no microcode; SMT Host state unknown
+Vulnerability Old microcode:             Not affected
+Vulnerability Reg file data sampling:    Not affected
+Vulnerability Retbleed:                  Vulnerable
+Vulnerability Spec rstack overflow:      Not affected
+Vulnerability Spec store bypass:         Vulnerable
+Vulnerability Spectre v1:                Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+Vulnerability Spectre v2:                Mitigation; Retpolines; STIBP disabled; RSB filling; PBRSB-eIBRS Not affected; BHI Retpoline
+Vulnerability Srbds:                     Not affected
+Vulnerability Tsa:                       Not affected
+Vulnerability Tsx async abort:           Not affected
+Vulnerability Vmscape:                   Not affected
+
+===== Killing Process =====
+
+===== Verification =====
+    PID TTY          TIME CMD
+
+Task Completed Successfully.
