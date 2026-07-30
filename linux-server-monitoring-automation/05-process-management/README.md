@@ -87,6 +87,3 @@ Verify that:
 - Memory and CPU information are displayed.
 - The `ping` process is terminated successfully.
 - `ps -p <PID>` returns no running process after the `kill` command.
-
-mination
-- Linux System Monitoring
